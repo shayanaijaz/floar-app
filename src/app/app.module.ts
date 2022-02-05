@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { TeamSelectionComponent } from './team-selection/team-selection.component';
 import { PlayerSelectionComponent } from './player-selection/player-selection.component';
 import { UserLandingComponent } from './user-landing/user-landing.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { UserLandingComponent } from './user-landing/user-landing.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

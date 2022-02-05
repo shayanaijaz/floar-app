@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  enabled: process.env.NODE_ENV === "production",
   mode: 'jit',
   important: true,
   content: ["./src/**/*.{html,js}"],
@@ -8,7 +9,9 @@ module.exports = {
     extend:{
       colors: {
         blueGray: colors.blueGray,
-        emerald: colors.emerald
+        emerald: colors.emerald,
+        'green': '#1E8803',
+        'green-light': '#71BC57'
       }
     }
   },

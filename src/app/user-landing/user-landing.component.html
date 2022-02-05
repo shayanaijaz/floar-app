@@ -1,1 +1,49 @@
-<p>user-landing works!</p>
+<header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
+
+  <div class="flex items-center justify-between mb-4 md:mb-0 w-full">
+    <h1 class="leading-none text-2xl text-grey-darkest w-full">
+      <div class="flex w-full">
+        <a class="block no-underline text-grey-darkest hover:text-black w-full" href="#">
+          <img style="max-width: 7%;" src="../../assets/brandmark-design.png" />
+        </a>
+      </div>
+    </h1>
+  </div>
+
+</header>
+
+<div class="max-w-2xl mx-auto pt-6 px-4 flex justify-center" style="padding-top: 1rem !important; padding-bottom: 2rem !important;">
+  <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Your upcoming games</h2>
+</div>
+
+<div class="flex justify-center">
+  <div class="grid grid-cols-4 gap-4">
+    <div class="block justify-center w-full h-full" *ngFor="let game of games">
+      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hover:cursor-pointer">
+        <div class="flex justify-center border-b border-gray-300 mt-3">
+          {{game.startTimeUTC | date: 'short'}}
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 border-b border-gray-300 mt-3 pb-3">
+          <div class="row-span-3 flex justify-center items-center">
+            <img [src]="game.hTeam.logo" style="height: 40px; width: 40px;" />
+          </div>
+          <div class="flex justify-center">
+            <label class="text-center">{{game.hTeam.fullName}}</label>
+          </div>
+          <div class="row-span-3 flex justify-center items-center">
+            <img [src]="game.vTeam.logo" style="height: 40x; width: 40px;" />
+          </div>
+          <div class="flex justify-center">
+            <label>VS</label>
+          </div>
+          <div class="flex justify-center">
+            <label class="text-center">{{game.vTeam.fullName}}</label>
+          </div>
+        </div>
+        <div class="flex justify-center mt-3">
+          <label>{{game.arena}}, {{game.city}}</label>
+        </div>
+  </div>
+</div>
+
