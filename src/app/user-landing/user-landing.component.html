@@ -20,6 +20,7 @@
   <div class="grid grid-cols-4 gap-4">
     <div class="block justify-center w-full h-full" *ngFor="let game of games">
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm hover:cursor-pointer">
+
         <div class="flex justify-center border-b border-gray-300 mt-3">
           {{game.startTimeUTC | date: 'short'}}
         </div>
@@ -41,8 +42,15 @@
             <label class="text-center">{{game.vTeam.fullName}}</label>
           </div>
         </div>
+
         <div class="flex justify-center mt-3">
           <label>{{game.arena}}, {{game.city}}</label>
+        </div>
+
+        <div class="flex justify-center mt-3">
+          <button class="bg-transparent hover:bg-green text-green font-semibold hover:text-white py-2 px-4 border border-green hover:border-transparent rounded">
+            Going
+          </button>
         </div>
   </div>
 </div>
